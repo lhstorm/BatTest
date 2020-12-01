@@ -20,7 +20,7 @@ option = st.sidebar.selectbox('Select your project:', windTurbines['p_name'].uni
 
 st.sidebar.subheader("Parameters for site financials:")
 
-TBAvail = st.sidebar.slider("Time Based Availability / %", min_value=0.0, max_value=100.0, value=98.0)
+TBAvail = st.sidebar.slider("Time Based Availability / %", min_value=80.0, max_value=100.0, value=98.0)
 CapFactor = st.sidebar.slider("Capacity Factor / %", min_value=0, max_value=100, value=50)
 EnergyPrice = st.sidebar.slider("Energy Price / $", min_value=0.00, max_value=200.00, value=30.00)
 PTCRate = st.sidebar.slider("PTC Rate / $", min_value=0.00, max_value=200.00, value=25.00)
