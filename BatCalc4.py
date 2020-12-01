@@ -30,7 +30,7 @@ CurtLoss = st.sidebar.slider("Bat Curtailment Loss / %", min_value=0.0, max_valu
 IntRate = st.sidebar.slider("Interest Rate / %", min_value=0, max_value=15, value=8)
 BDSPrice = st.sidebar.number_input('Enter BDS Price', 11900.00)
 InstallCost = st.sidebar.number_input('Enter Installation Price', value=1500.00)
-NetworkingCost = st.sidebar.number_input('Enter Networking Price', value=2000.00)
+NetworkingCost = st.sidebar.number_input('Enter Networking Price per Turbine', value=2000.00)
 InstallYear = st.sidebar.select_slider("Deterrent Install Year: ", options=[2021, 2022, 2023], value=2021)
 TotalBDS = BDSPrice+InstallCost+NetworkingCost
 
