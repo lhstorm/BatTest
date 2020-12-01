@@ -20,17 +20,17 @@ option = st.sidebar.selectbox('Select your project:', windTurbines['p_name'].uni
 
 st.sidebar.subheader("Parameters for site financials:")
 
-TBAvail = st.sidebar.slider("Time Based Availability / %", min_value=0, max_value=100, value=98)
-CapFactor = st.sidebar.slider("Capacity Factor / %", min_value=0, max_value=100, value=50)
-EnergyPrice = st.sidebar.slider("Energy Price / $", min_value=0, max_value=100, value=30)
-PTCRate = st.sidebar.slider("PTC Rate / $", min_value=0, max_value=100, value=25)
-PTCYears = st.sidebar.slider("PTC Years From Start", min_value=0, max_value=25, value=10)
-ProjLifetime = st.sidebar.slider("Project Lifetime", min_value=0, max_value=25, value=25)
-CurtLoss = st.sidebar.slider("Bat Curtailment Loss / %", min_value=0, max_value=15, value=2)
-IntRate = st.sidebar.slider("Interest Rate / %", min_value=0, max_value=15, value=8)
-BDSPrice = st.sidebar.number_input('Enter BDS Price', 11900)
-InstallCost = st.sidebar.number_input('Enter Installation Price', value=1500)
-NetworkingCost = st.sidebar.number_input('Enter Networking Price', value=2000)
+TBAvail = st.sidebar.slider("Time Based Availability / %", min_value=0.00, max_value=100, value=98)
+CapFactor = st.sidebar.slider("Capacity Factor / %", min_value=0.0, max_value=100, value=50)
+EnergyPrice = st.sidebar.slider("Energy Price / $", min_value=0.00, max_value=100, value=30)
+PTCRate = st.sidebar.slider("PTC Rate / $", min_value=0.00, max_value=100, value=25)
+PTCYears = st.sidebar.slider("PTC Years From Start", min_value=0.0, max_value=25, value=10)
+ProjLifetime = st.sidebar.slider("Project Lifetime", min_value=0.0, max_value=25, value=25)
+CurtLoss = st.sidebar.slider("Bat Curtailment Loss / %", min_value=0.0, max_value=15, value=2)
+IntRate = st.sidebar.slider("Interest Rate / %", min_value=0.0, max_value=15, value=8)
+BDSPrice = st.sidebar.number_input('Enter BDS Price', 11900.00)
+InstallCost = st.sidebar.number_input('Enter Installation Price', value=1500.00)
+NetworkingCost = st.sidebar.number_input('Enter Networking Price', value=2000.00)
 InstallYear = st.sidebar.select_slider("Deterrent Install Year: ", options=[2021, 2022, 2023], value=2021)
 TotalBDS = BDSPrice+InstallCost+NetworkingCost
 
