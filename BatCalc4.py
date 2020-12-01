@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-pip install numpy_financial
+pip install numpy-financial
 import numpy_financial
 from pathlib import Path
 import base64
