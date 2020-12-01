@@ -1,17 +1,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
-pip install numpy-financial
-import numpy_financial
 from pathlib import Path
 import base64
-# import pdfkit
 
-# Importing Data
 windTurbines = pd.read_csv("uswtdb_v3_1.csv")
 windTurbines.fillna("")
-#windTurbines.replace("",0, inplace=True)
 windTurbines.rename(columns={'xlong': "lon", 'ylat': 'lat'}, inplace=True)
 
 
@@ -95,8 +89,8 @@ while i2 < len(ProjFinancials.loc[str(InstallYear):]):
     ProjFinancials.loc[str(InstallYear+i2),"Net Savings"]= int(ProjFinancials.loc[str(InstallYear-1+i2),"Net Savings"])+int(ProjFinancials.loc[str(InstallYear+i2),"Annual Curt Loss"])
     i2 = i2+1
 
-NPVRevenue = numpy_financial.npv(IntRate/100, ProjFinancials["Annual Revenue"])
-NPVCurtLosses = numpy_financial.npv(IntRate/100, ProjFinancials.loc[str(InstallYear):]["Annual Curt Loss"])
+NPVRevenue = np.npv(IntRate/100, ProjFinancials["Annual Revenue"])
+NPVCurtLosses = np.npv(IntRate/100, ProjFinancials.loc[str(InstallYear):]["Annual Curt Loss"])
 img_path="NRG-LogoPNG.png"
 #def img_to_bytes(img_path):
 #    img_bytes = Path(img_path).read_bytes()
