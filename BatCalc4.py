@@ -4,8 +4,10 @@ import numpy as np
 from pathlib import Path
 import base64
 
+# Importing Data
 windTurbines = pd.read_csv("uswtdb_v3_1.csv")
 windTurbines.fillna("")
+#windTurbines.replace("",0, inplace=True)
 windTurbines.rename(columns={'xlong': "lon", 'ylat': 'lat'}, inplace=True)
 
 
@@ -92,22 +94,22 @@ while i2 < len(ProjFinancials.loc[str(InstallYear):]):
 NPVRevenue = np.npv(IntRate/100, ProjFinancials["Annual Revenue"])
 NPVCurtLosses = np.npv(IntRate/100, ProjFinancials.loc[str(InstallYear):]["Annual Curt Loss"])
 img_path="NRG-LogoPNG.png"
-#def img_to_bytes(img_path):
-#    img_bytes = Path(img_path).read_bytes()
-#    encoded = base64.b64encode(img_bytes).decode()
-#    return encoded
-#header_html = "<img src='data:image/png;base64,{}' class='img-fluid' height='100'>".format(
-#    img_to_bytes("NRG-LogoPNG.png")
-#)
+def img_to_bytes(img_path):
+    img_bytes = Path(img_path).read_bytes()
+    encoded = base64.b64encode(img_bytes).decode()
+    return encoded
+header_html = "<img src='data:image/png;base64,{}' class='img-fluid' height='100'>".format(
+    img_to_bytes("NRG-LogoPNG.png")
+)
 
 
-#col1, col2=st.beta_columns(2)
+col1, col2=st.beta_columns(2)
 
-#with col1:
-#    st.markdown(header_html, unsafe_allow_html=True)
-#with col2:
-#    st.header('Bat Deterrent ROI Calculator')
-#    st.text('by NRG Systems')
+with col1:
+    st.markdown(header_html, unsafe_allow_html=True)
+with col2:
+    st.header('Bat Deterrent ROI Calculator')
+    st.text('by NRG Systems')
 
 
 
