@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import numpy_financial as npf
 from pathlib import Path
 import base64
 
@@ -91,8 +92,8 @@ while i2 < len(ProjFinancials.loc[str(InstallYear):]):
     ProjFinancials.loc[str(InstallYear+i2),"Net Savings"]= int(ProjFinancials.loc[str(InstallYear-1+i2),"Net Savings"])+int(ProjFinancials.loc[str(InstallYear+i2),"Annual Curt Loss"])
     i2 = i2+1
 
-NPVRevenue = np.npv(IntRate/100, ProjFinancials["Annual Revenue"])
-NPVCurtLosses = np.npv(IntRate/100, ProjFinancials.loc[str(InstallYear):]["Annual Curt Loss"])
+NPVRevenue = npf.npv(IntRate/100, ProjFinancials["Annual Revenue"])
+NPVCurtLosses = npf.npv(IntRate/100, ProjFinancials.loc[str(InstallYear):]["Annual Curt Loss"])
 img_path="NRG-LogoPNG.png"
 def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
