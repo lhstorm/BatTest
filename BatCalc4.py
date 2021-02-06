@@ -5,6 +5,8 @@ import numpy_financial as npf
 from pathlib import Path
 import base64
 
+
+
 # Importing Data
 windTurbines = pd.read_csv("uswtdb_v3_1.csv")
 windTurbines.fillna("")
@@ -13,8 +15,7 @@ windTurbines.rename(columns={'xlong': "lon", 'ylat': 'lat'}, inplace=True)
 
 
 # Project Name
-# st.title("Bat Deterrent Systems Calculator")
-# st.write("This is a useful tool to quickly calculate the savings that bat deterrent solutions can result in for any")
+st.set_page_config(page_title="NRG Bat Calc", layout="wide", initial_sidebar_state="expanded")
 HoursAnnual = 8760
 
 
