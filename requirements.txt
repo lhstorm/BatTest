@@ -1,2 +1,5 @@
+pip install pipreqs
+#pipreqs /home/project/location
+
 pip install numpy_financial
-numpy_financial /home/project/location
+#numpy_financial /home/project/location
