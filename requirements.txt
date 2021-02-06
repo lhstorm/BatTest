@@ -1,1 +1,2 @@
 pip install numpy_financial
+numpy_financial /home/project/location
